@@ -18,7 +18,7 @@ def openWebWhatsapp(driver):
 
 def sendMedia(target, file):
 	wait = WebDriverWait(driver, 600)
-	sidebar_locate = '//span[contains(@title, "' + target + '")]'
+	sidebar_locate = f'//span[contains(@title, "{target}")]'
 	chat_window = wait.until(EC.presence_of_element_located((By.XPATH, sidebar_locate)))
 	chat_window.click()
 	attach_locate = '//button[@title="Attach"][@class="icon icon-clip"]'
@@ -33,7 +33,7 @@ def sendMedia(target, file):
 
 def sendText(target, *message):
 	wait = WebDriverWait(driver, 600)
-	sidebar_locate = '//span[contains(@title, "' + target + '")]'
+	sidebar_locate = f'//span[contains(@title, "{target}")]'
 	chat_window = wait.until(EC.presence_of_element_located((By.XPATH, sidebar_locate)))
 	chat_window.click()
 	input_locate = '//div[@class="input"][@dir="auto"][@data-tab="1"]'
